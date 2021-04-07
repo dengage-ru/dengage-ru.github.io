@@ -1,1 +1,8 @@
-importScripts("https://rupub.dengage.com/p/push/1/cca3a257-19e1-e8ae-75fa-b3d99356051a/dengage_sw.js");
+
+var swUrl = new URL(location);
+var accountId = swUrl.searchParams.get('account_id') || '';
+var appGuid = swUrl.searchParams.get('app_guid') || '';
+if (accountId && appGuid) {
+    importScripts("https://ru-pub.dengage.com/p/push/" + accountId + "/" + appGuid + "/dengage_sw.js");
+}
+        
